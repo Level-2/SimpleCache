@@ -1,4 +1,9 @@
 <?php 
+/* @description     A very simple filesystem cache class that stores one entry per file        *
+ * @author          Tom Butler tom@r.je                                                        *
+ * @copyright       2015 Tom Butler                                                            *
+ * @license         http://www.opensource.org/licenses/bsd-license.php  BSD License            *
+ * @version         1.0                                                                        */
 namespace SimpleCache;
 class SimpleCache implements \ArrayAccess {
 	private $dir;
