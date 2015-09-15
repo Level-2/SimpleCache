@@ -1,0 +1,20 @@
+{
+    "name": "level-2/simplecache",
+    "version": "1.0",
+    "description": "A very simple ArrayAccess based file ache",
+    "license": "BSD-2-Clause",
+    "keywords": ["file cache", "cache"],
+    "minimum-stability": "dev",
+    "authors": [
+    	{
+    		"name": "Tom Butler",
+    		"email": "tom@r.je"
+    	}
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+    	"classmap": ["./"]
+    }
+}
