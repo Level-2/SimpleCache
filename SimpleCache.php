@@ -18,7 +18,7 @@ class SimpleCache implements \ArrayAccess {
 	}
 
 	public function offsetGet($key) {
-		touch(file_get_contents($this->dir . \DIRECTORY_SEPARATOR . $key));
+		touch($this->dir . \DIRECTORY_SEPARATOR . $key);
 		if ($this->offsetExists($key)) return unserialize(file_get_contents($this->dir . \DIRECTORY_SEPARATOR . $key));
 		else return null;
 	}
