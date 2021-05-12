@@ -36,8 +36,9 @@ class SimpleCache implements \ArrayAccess {
 			$lastRun = $this['___cacheGC'];
 			if ($lastRun+$gcInterval < time()) {
 				foreach (new \DirectoryIterator($this->dir) as $file) {
-					if  (filemtime($this->dir . DIRECTORY_SEPARATOR . $file->getFileName()) + $maxAge < time()) {
-						unlink($this->dir . DIRECTORY_SEPARATOR . $file->getFileName());
+					$filePath = $this->dir . DIRECTORY_SEPARATOR . $file->getFileName();
+					if (is_file($filePath) && (filemtime($filePath) + $maxAge < time())) {
+						unlink($filePath);
 					}
 				}
 				$this['___cacheGC'] = time();
